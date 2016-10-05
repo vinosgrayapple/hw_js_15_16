@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Api VK</title>
+</script>
+</head>
+<body>
+	<div id="vk_api_transport"></div>
+<script type="text/javascript">
+  window.vkAsyncInit = function() {
+    VK.init({
+      apiId: 5655220
+    });
+    VK.Auth.login(function(response) {
+  if (response.session) {
+    /* Пользователь успешно авторизовался */
+    if (response.settings) {
+      /* Выбранные настройки доступа пользователя, если они были запрошены */
+    }
+  } else {
+    /* Пользователь нажал кнопку Отмена в окне авторизации */
+  }
+});
+    
+  };
+
+  setTimeout(function() {
+    var el = document.createElement("script");
+    el.type = "text/javascript";
+    el.src = "//vk.com/js/api/openapi.js";
+    el.async = true;
+    document.getElementById("vk_api_transport").appendChild(el);
+  }, 0);
+
+
+</script>
+
+</body>
+</html>
