@@ -1,40 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Api VK</title>
-</script>
-</head>
-<body>
-	<div id="vk_api_transport"></div>
-<script type="text/javascript">
-  window.vkAsyncInit = function() {
-    VK.init({
-      apiId: 5655220
-    });
-    VK.Auth.login(function(response) {
-  if (response.session) {
-    /* Пользователь успешно авторизовался */
-    if (response.settings) {
-      /* Выбранные настройки доступа пользователя, если они были запрошены */
-    }
-  } else {
-    /* Пользователь нажал кнопку Отмена в окне авторизации */
-  }
-});
-    
-  };
+<!doctype html>
+<html>
+  <head>
+    <title>Search</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  setTimeout(function() {
-    var el = document.createElement("script");
-    el.type = "text/javascript";
-    el.src = "//vk.com/js/api/openapi.js";
-    el.async = true;
-    document.getElementById("vk_api_transport").appendChild(el);
-  }, 0);
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+        <header>
+            <h1 class="w100 text-center"><a href="index.html">YouTube Поиск</a></h1>
+        </header>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form action="#">
+                    <p><input type="text"  placeholder="Что ищем ..." autocomplete="off" class="form-control" id="search-field"/></p>
+                    <p><button type="button" id="search" class="form-control btn btn-primary w100">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Искать
+                        </button></p>
+                </form>
+                <div id="results"></div>
+            </div>
+        </div>
 
+    <script src="js/search.js"></script>
+  </body>
 
-</script>
-
-</body>
 </html>
