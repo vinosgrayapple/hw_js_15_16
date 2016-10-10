@@ -6,7 +6,7 @@ $(function() {
         $("#results").html("");
 
   var  qn= $("#search-field").val();
-  
+  if (!qn) return;
   $.get('https://www.googleapis.com/youtube/v3/search',{
     part:'snippet',
     key:'AIzaSyDtDjgdi39C0x4DZIpb0GKJE7dUS9z8leY',
@@ -16,7 +16,6 @@ $(function() {
   function(data) {
     $.each(data.items, function(i,item) {
       // console.log(item);
-
         $.get("tpl/item.html", function(data) {
                     $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
                 });
